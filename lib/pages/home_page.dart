@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quiz/models/Question.dart';
 import 'package:flutter_quiz/widgets/answer.dart';
 
+import '../widgets/progress_bar.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -47,6 +49,11 @@ class _HomePageState extends State<HomePage> {
         ),
         child: Column(
           children: <Widget>[
+            ProgressBar(
+              icons: _icons,
+              count: _questionIndex,
+              total: data.questions.length,
+            ),
             Container(
               padding: EdgeInsets.all(10),
               child: Text(
