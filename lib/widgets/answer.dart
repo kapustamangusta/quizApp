@@ -36,10 +36,6 @@ class Answer extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.white,
-          ),
         ),
       ),
     );
