@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
             ...data.questions[_questionIndex].answers
                 .map((value) => Answer(
                       title: value['answer'],
-                      isCorrect: value.containsKey('isCorrect'),
+                      isCorrect: value.containsKey('isCorect') ? true : false,
                       onChangeAnswer: _onChangeAnswer,
                     ))
                 .toList(),
