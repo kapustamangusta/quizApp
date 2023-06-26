@@ -66,12 +66,7 @@ class _HomePageState extends State<HomePage> {
                       title: value['answer'],
                     ))
                 .toList(),
-            ElevatedButton(
-              onPressed: () {
-                setState(() => _questionIndex += 1);
-              },
-              child: Text("Дальше"),
-            ),
+            
           ],
         ),
       ),
