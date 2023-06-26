@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quiz/models/Question.dart';
 import 'package:flutter_quiz/widgets/answer.dart';
+import 'package:flutter_quiz/widgets/quiz.dart';
 
 import '../widgets/progress_bar.dart';
 
@@ -54,21 +55,13 @@ class _HomePageState extends State<HomePage> {
               count: _questionIndex,
               total: data.questions.length,
             ),
-            Container(
-              padding: EdgeInsets.all(10),
-              child: Text(
-                data.questions[_questionIndex].title,
-                style: Theme.of(context).textTheme.caption,
-              ),
-            ),
-            ...data.questions[_questionIndex].answers
-                .map((value) => Answer(
-                      title: value['answer'],
-                      isCorrect: value.containsKey('isCorect') ? true : false,
-                      onChangeAnswer: _onChangeAnswer,
-                    ))
-                .toList(),
-            
+
+            Quiz(
+              index: _questionIndex,
+              questionData: data,
+              onChangeAnswer: _onChangeAnswer,
+            )
+
           ],
         ),
       ),
